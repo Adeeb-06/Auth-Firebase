@@ -1,12 +1,27 @@
 import React from 'react'
 import { Outlet } from 'react-router'
-import NavBar from '../component/NavBar/NavBar'
+import Header from '../component/Header.jsx'
 
 const Root = () => {
   return (
     <>
-    <NavBar/>
-    <Outlet/>
+    <div>
+      <header>
+        <Header/>
+      </header>
+      <main>
+        <section className='left_nav'>
+
+        </section>
+        <section className="main">
+          
+          <Outlet />
+        </section>
+        <section className='right_nav'>
+
+        </section>
+      </main>
+    </div>
     </>
   )
 }
