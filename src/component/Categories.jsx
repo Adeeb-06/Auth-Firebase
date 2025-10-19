@@ -9,7 +9,7 @@ const Categories = () => {
     const categories = use(categoryPromise)
 
   return (
-    <div>
+    <div className='h-fit '>
         <h1 className='font-bold'>All Categories({categories.length})</h1>
 
         <div className='grid grid-cols-1 gap-3 mt-5 '>
