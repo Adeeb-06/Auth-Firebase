@@ -3,7 +3,7 @@ import { Navigate } from 'react-router'
 
 const Home = () => {
   return (
-    Navigate('/category/0')
+    <Navigate to="/category/0" />
   )
 }
 
