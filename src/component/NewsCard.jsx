@@ -1,6 +1,7 @@
 import React from "react";
 import { Star, Eye } from "lucide-react";
 import { IoIosShareAlt } from "react-icons/io";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
   const { title, rating, total_view, author, thumbnail_url, details } = news;
@@ -47,7 +48,7 @@ const NewsCard = ({ news }) => {
       {/* Details */}
       <div className="px-4 text-sm text-gray-600">
         {details.slice(0, 180)}...
-        <button className="text-secondary font-medium ml-1">Read More</button>
+        <Link to={`/news-details/${news.id}`} className="text-secondary font-medium ml-1">Read More</Link>
       </div>
 
       {/* Footer */}

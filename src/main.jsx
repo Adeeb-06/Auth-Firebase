@@ -11,6 +11,8 @@ import CategoryNews from './pages/CategoryNews.jsx';
 import Login from './pages/Login.jsx';
 import SignUp from './pages/SignUp.jsx';
 import AuthLayout from './layout/AuthLayout.jsx';
+import AuthProvider from './provider/AuthProvider.jsx';
+import NewsDetails from './pages/NewsDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -42,11 +44,19 @@ const router = createBrowserRouter([
       }
     ]
 
+  },
+  {
+    path:"/news-details/:id",
+    element: <NewsDetails/>,
+     loader: () => fetch("/news.json") 
   }
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <AuthProvider>
+
     <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )
